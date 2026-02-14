@@ -16,8 +16,26 @@ import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Kanban | AI-Powered Kanban that Builds with You",
+  title: {
+    default: "AI Kanban | AI-Powered Kanban that Builds with You",
+    template: "%s | AI Kanban"
+  },
   description: "Integrated with OpenAgent, not only tracks tasks but can also clone code, run tests, and search for solutions in a secure sandbox.",
+  keywords: ["AI Kanban", "AI Agent", "Project Management", "OpenAgent", "Vercel Sandbox", "Next.js"],
+  authors: [{ name: "AI Kanban Team" }],
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    url: "https://aikanban.com",
+    title: "AI Kanban | AI-Powered Kanban that Builds with You",
+    description: "The next-generation project management tool powered by AI agents.",
+    siteName: "AI Kanban",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Kanban | AI-Powered Kanban that Builds with You",
+    description: "The next-generation project management tool powered by AI agents.",
+  },
 };
 
 export default function RootLayout({
