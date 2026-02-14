@@ -1,7 +1,9 @@
 import { PRICING_TIERS, PRICING_HEADER } from "@/lib/constants/pricing";
+import { APP_URL } from "@/lib/constants/marketing";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function PricingTable() {
   return (
@@ -51,12 +53,14 @@ export function PricingTable() {
               ))}
             </ul>
 
-            <Button 
-              variant={tier.highlight ? "default" : "outline"}
-              className={cn("w-full h-11 rounded-xl font-bold")}
-            >
-              {tier.name === "ENTERPRISE" ? "Contact Sales" : "Get Started"}
-            </Button>
+            <Link href={APP_URL} className="w-full">
+              <Button 
+                variant={tier.highlight ? "default" : "outline"}
+                className={cn("w-full h-11 rounded-xl font-bold")}
+              >
+                {tier.name === "ENTERPRISE" ? "Contact Sales" : "Get Started"}
+              </Button>
+            </Link>
           </div>
         ))}
       </div>

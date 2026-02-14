@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { HERO_CONTENT } from "@/lib/constants/marketing";
+import { HERO_CONTENT, APP_URL } from "@/lib/constants/marketing";
 
 export function Hero() {
   return (
@@ -28,12 +29,16 @@ export function Hero() {
             {HERO_CONTENT.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button size="lg" className="h-12 px-8 text-base bg-primary hover:bg-primary/90">
-              {HERO_CONTENT.ctaPrimary} <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 text-base">
-              {HERO_CONTENT.ctaSecondary}
-            </Button>
+            <Link href={APP_URL}>
+              <Button size="lg" className="h-12 px-8 text-base bg-primary hover:bg-primary/90">
+                {HERO_CONTENT.ctaPrimary} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href={APP_URL}>
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base">
+                {HERO_CONTENT.ctaSecondary}
+              </Button>
+            </Link>
           </div>
         </motion.div>
 

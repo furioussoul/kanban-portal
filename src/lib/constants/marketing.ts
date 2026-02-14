@@ -1,3 +1,5 @@
+export const APP_URL = "https://team-jade-pi.vercel.app/";
+
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },

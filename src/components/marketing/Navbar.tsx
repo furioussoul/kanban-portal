@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { NAV_LINKS } from "@/lib/constants/marketing";
+import { NAV_LINKS, APP_URL } from "@/lib/constants/marketing";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -36,8 +36,12 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm">Login</Button>
-            <Button size="sm">Get Started</Button>
+            <Link href={APP_URL}>
+              <Button variant="ghost" size="sm">Login</Button>
+            </Link>
+            <Link href={APP_URL}>
+              <Button size="sm">Get Started</Button>
+            </Link>
           </div>
 
           <button 
@@ -65,8 +69,12 @@ export function Navbar() {
             </Link>
           ))}
           <hr className="border-white/5" />
-          <Button variant="outline" className="w-full">Login</Button>
-          <Button className="w-full">Get Started</Button>
+          <Link href={APP_URL} className="w-full">
+            <Button variant="outline" className="w-full">Login</Button>
+          </Link>
+          <Link href={APP_URL} className="w-full">
+            <Button className="w-full">Get Started</Button>
+          </Link>
         </div>
       )}
     </nav>
