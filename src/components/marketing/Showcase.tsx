@@ -1,10 +1,19 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function Showcase() {
   return (
     <section className="container mx-auto px-4 py-24 overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center gap-16">
-        <div className="flex-1 space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex-1 space-y-8"
+        >
           <div className="inline-flex rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
             Seamless Workflow
           </div>
@@ -28,10 +37,16 @@ export function Showcase() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
         
-        <div className="flex-1 relative">
-          <div className="relative z-10 rounded-2xl border border-border bg-card shadow-2xl p-2 animate-in slide-in-from-right-8 duration-1000">
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex-1 relative"
+        >
+          <div className="relative z-10 rounded-2xl border border-border bg-card shadow-2xl p-2">
             <Image
               src="/assets/f0ee0931-69e9-41d8-b91b-ae56b7eabfd0.png"
               alt="AI Kanban Interaction"
@@ -40,10 +55,8 @@ export function Showcase() {
               className="rounded-xl"
             />
           </div>
-          
-          {/* Background glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/10 blur-3xl -z-10" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

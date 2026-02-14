@@ -1,13 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
     <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center text-center max-w-4xl mx-auto"
+        >
+          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
             <span className="flex h-2 w-2 rounded-full bg-primary mr-2" />
             New: OpenAgent Integration is now in Beta
           </div>
@@ -25,10 +33,15 @@ export function Hero() {
               查看演示
             </Button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative max-w-5xl mx-auto animate-in fade-in zoom-in duration-1000 delay-300">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative max-w-5xl mx-auto"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25"></div>
           <div className="relative rounded-xl border border-border bg-card shadow-2xl overflow-hidden">
             <Image
               src="/assets/a9514bf9-c435-4cc0-84a1-fd0e282b18e8.png"
@@ -40,10 +53,9 @@ export function Hero() {
             />
           </div>
           
-          {/* Decorative elements */}
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
