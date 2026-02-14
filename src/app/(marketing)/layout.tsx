@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aikanban.com",
+    url: "https://team-jade-pi.vercel.app/",
     title: "AI Kanban | AI-Powered Kanban that Builds with You",
     description: "The next-generation project management tool powered by AI agents.",
     siteName: "AI Kanban",
