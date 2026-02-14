@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: "AI Kanban Team" }],
   openGraph: {
     type: "website",
-    locale: "zh_CN",
+    locale: "en_US",
     url: "https://aikanban.com",
     title: "AI Kanban | AI-Powered Kanban that Builds with You",
     description: "The next-generation project management tool powered by AI agents.",

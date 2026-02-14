@@ -1,3 +1,8 @@
+export const PRICING_HEADER = {
+  title: "Transparent Pricing",
+  description: "Choose the right plan based on your needs, all plans include core Kanban features.",
+};
+
 export const PRICING_TIERS = [
   {
     name: "FREE",

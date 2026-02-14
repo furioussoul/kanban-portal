@@ -1,4 +1,4 @@
-import { PRICING_TIERS } from "@/lib/constants/pricing";
+import { PRICING_TIERS, PRICING_HEADER } from "@/lib/constants/pricing";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -7,13 +7,13 @@ export function PricingTable() {
   return (
     <section id="pricing" className="container mx-auto px-4 py-24">
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">透明的定价</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">{PRICING_HEADER.title}</h2>
         <p className="text-lg text-muted-foreground">
-          根据你的需求选择合适的方案，所有方案都包含核心看板功能。
+          {PRICING_HEADER.description}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-6">
         {PRICING_TIERS.map((tier) => (
           <div
             key={tier.name}

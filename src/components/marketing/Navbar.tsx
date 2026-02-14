@@ -43,6 +43,8 @@ export function Navbar() {
           <button 
             className="md:hidden p-2 text-muted-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle menu"
           >
             {isOpen ? <X /> : <Menu />}
           </button>

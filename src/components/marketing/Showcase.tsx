@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { SHOWCASE_CONTENT } from "@/lib/constants/marketing";
+
 export function Showcase() {
   return (
     <section className="container mx-auto px-4 py-24 overflow-hidden">
@@ -15,22 +17,16 @@ export function Showcase() {
           className="flex-1 space-y-8"
         >
           <div className="inline-flex rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
-            Seamless Workflow
+            {SHOWCASE_CONTENT.badge}
           </div>
           <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-            从想法到代码，<br />
-            只需在看板上拖拽。
+            {SHOWCASE_CONTENT.title}
           </h2>
           <p className="text-lg text-muted-foreground">
-            AI Kanban 不仅仅是一个展示板。当你将任务从“待办”拖到“进行中”时，我们的 AI 代理会自动开始工作：分析上下文、建议实现方案，甚至在你的许可下直接生成代码。
+            {SHOWCASE_CONTENT.description}
           </p>
           <ul className="space-y-4">
-            {[
-              "自动化代码分析与任务拆解",
-              "与 GitHub Pull Requests 深度集成",
-              "实时协作，毫秒级状态同步",
-              "完全可自定义的工作流"
-            ].map((item) => (
+            {SHOWCASE_CONTENT.features.map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                 <span className="font-medium">{item}</span>
