@@ -12,6 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { Navbar } from "@/components/marketing/Navbar";
+import { Footer } from "@/components/marketing/Footer";
+
 export const metadata: Metadata = {
   title: "AI Kanban | AI-Powered Kanban that Builds with You",
   description: "Integrated with OpenAgent, not only tracks tasks but can also clone code, run tests, and search for solutions in a secure sandbox.",
@@ -27,11 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {/* Navbar placeholder */}
-        <main className="flex-grow">
+        <Navbar />
+        <main className="flex-grow pt-16">
           {children}
         </main>
-        {/* Footer placeholder */}
+        <Footer />
       </body>
     </html>
   );
